@@ -344,10 +344,10 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 
 # increase history size
-#set -g history-limit 10000
+set -g history-limit 50000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -411,7 +411,9 @@ set -g @plugin 'sainnhe/tmux-fzf'
 set -g @continuum-restore 'on'
 set -g @plugin 'egel/tmux-gruvbox'
 set -g @tmux-gruvbox 'dark'
-
+# Preserves what was readable in each pane.
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-nvim 'session'
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
